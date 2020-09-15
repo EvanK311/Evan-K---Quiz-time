@@ -1,12 +1,18 @@
 .container {
-    margin-top: 100px;    
+    margin-top: 100px;
+    margin-bottom: 100px;    
     height: 800px;
     width: 1000px;    
     background-color:olive;
     
 }
 
-.question {
+.card {
+    margin-top: 100px;
+    padding: 30px;
+}
+
+/* .question {
    text-align: center;
    vertical-align: center;
 
@@ -18,4 +24,4 @@ h1 {
 
 #quiztions {
     padding: 30x;
-}
+} */
