@@ -6,34 +6,38 @@
 //TODO: create function that indicates when game is over.
 //TODO: Create high score page that retains name and high score information.
 
-var startBtn = document.getElementById('startBtn')
-var questionContentBox = document.getElementById('questionContent')
-var randoQuestions, currentQuestionIndex
+var startBtn = document.getElementById('startBtn');
+var questionContentBox = document.getElementById('questionContent');
 
-startBtn.addEventListener('click', starGame) 
+var questionMaker = document.getElementById('question');
+var answerButton = document.getElementById('answerChoices');
+
+
+let randoQuestions, currentQuestionIndex;
+    
+startBtn.addEventListener('click', startGame);
 
 function startGame() {
-    startBtn.classList.add('hide')
-    randoQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    questionContentBox.classList.remove('hide')
-    nextQuestion()
+    console.log("started");
+    startBtn.classList.add('hide');
+    questionContentBox.classList.remove('hide');
+    currentQuestionIndex = 0;
+    nextQuestion();
 }
+
 
 function nextQuestion() {
-    showQuestion(randoQuestions[CurrentQuestionIndex])
-}
-
-function showQuestion(questions) {
-
+   
+function showQuestion(question) {
+    questionMaker.innerText = question.question;
 }
 
 var questions = [
     {
-        question: "Which if these are fire types weak to",
+        question: 'Which if these are fire types weak to',
         answer: [
             { text: 'Rock', correct: true },
             { text: 'Flying', correct: false },
         ]
     }
-]
+];
