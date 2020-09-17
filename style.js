@@ -14,8 +14,9 @@ var ansBtn3 = document.getElementById('btn3')
 var ansBtn4 = document.getElementById('btn4')
 var questionMaker = document.getElementById('currentQuestion');
 var answerButton = document.getElementById('answerChoices');
-
-
+var questionIndex = 0
+var runTime = document.getElementById('timer')
+var quizTimer
 var randoQuestions
 var currentQuestionIndex
 
@@ -36,34 +37,53 @@ var questions = [
         answer3: 'Thunder Stone',
         answer4: 'Friendship',
         correct: 'Thunde Stone',
+    },
+    {
+        question: 'Which of these does not belong',
+        answer1: 'Zapdos',
+        answer2: 'Articuno',
+        answer3: 'Lugia',
+        answer4: 'Moltres',
+        correct: 'Lugia',
     }
 ];
 
 questionMaker.style.display = "none"
 questionContentBox.style.display = "none"
+runTime = 30
+runTime.style.display = "none"
 
 document.getElementById("startBtn").addEventListener('click', function(startgame) {    
-        console.log("started");
+        // console.log("started");
         startBtn.style.display = "none";
     questionContentBox.style.display = "block";
     questionMaker.style.display = "block"
-    questionMaker.textContent = questions[0].question
-    ansBtn.textContent = questions[0].answer1
-    ansBtn2.textContent = questions[0].answer2
-    ansBtn3.textContent = questions[0].answer3
-    ansBtn4.textContent = questions[0].answer4
-
-        // nextQuestion();
+    questionMaker.textContent = questions[questionIndex].question
+    ansBtn.textContent = questions[questionIndex].answer1
+    ansBtn2.textContent = questions[questionIndex].answer2
+    ansBtn3.textContent = questions[questionIndex].answer3
+    ansBtn4.textContent = questions[questionIndex].answer4
+    
+    runTime.style.display = "block" 
     }
 )
 
-// function nextQuestion() {
+function nextQuestion() {
+    questionMaker.textContent = questions[questionIndex].question
+    ansBtn.textContent = questions[questionIndex].answer1
+    ansBtn2.textContent = questions[questionIndex].answer2
+    ansBtn3.textContent = questions[questionIndex].answer3
+    ansBtn4.textContent = questions[questionIndex].answer4
 
-//     function showQuestion(question) {
-//         currentQuestion.innerText = question.question;
-//     }
-// }
-
+}
+ansBtn.addEventListener("click", function (event) {
+    if (ansBtn.id === questions[questionIndex].correct) {
+        
+    }
+    
+        questionIndex++
+}
+      
 
 
 // questionMaker.textContent = questions[0].question
