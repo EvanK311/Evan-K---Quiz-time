@@ -8,36 +8,65 @@
 
 var startBtn = document.getElementById('startBtn');
 var questionContentBox = document.getElementById('questionContent');
-
-var questionMaker = document.getElementById('question');
+var ansBtn = document.getElementById('btn')
+var ansBtn2 = document.getElementById('btn2')
+var ansBtn3 = document.getElementById('btn3')
+var ansBtn4 = document.getElementById('btn4')
+var questionMaker = document.getElementById('currentQuestion');
 var answerButton = document.getElementById('answerChoices');
 
 
-let randoQuestions, currentQuestionIndex;
-    
-startBtn.addEventListener('click', startGame);
+var randoQuestions
+var currentQuestionIndex
 
-function startGame() {
-    console.log("started");
-    startBtn.classList.add('hide');
-    questionContentBox.classList.remove('hide');
-    currentQuestionIndex = 0;
-    nextQuestion();
+questionContentBox.classList.add('hide')
+ansBtn.classList.add('hide');
+ansBtn2.classList.add('hide');
+ansBtn3.classList.add('hide');
+ansBtn4.classList.add('hide');
+
+startBtn.addEventListener('click', startGame); {
+
+    function startGame() {
+        console.log("started");
+        startBtn.classList.add('hide');
+        questionContentBox.classList.remove('hide');
+        ansBtn.classList.remove('hide');
+        ansBtn2.classList.remove('hide');
+        ansBtn3.classList.remove('hide');
+        ansBtn4.classList.remove('hide');
+        nextQuestion();
+    }
 }
-
 
 function nextQuestion() {
-   
-function showQuestion(question) {
-    questionMaker.innerText = question.question;
-}
 
+    function showQuestion(question) {
+        currentQuestion.innerText = question.question;
+    }
+}
 var questions = [
     {
-        question: 'Which if these are fire types weak to',
-        answer: [
-            { text: 'Rock', correct: true },
-            { text: 'Flying', correct: false },
-        ]
+        question: 'Which type is fire weak to',
+        answer1: 'Rock',
+        answer2: 'Grass',
+        answer3: 'Flying',
+        answer4: 'Ice',
+        correct: 'Rock'
+    },
+
+    {
+        question: 'Pikachu evolves using what method?',
+        answer1: 'Level up',
+        answer2: 'Trading',
+        answer3: 'Thunder Stone',
+        answer4: 'Friendship',
+        correct: 'Thunde Stone',
     }
 ];
+
+
+questionMaker.textContent = questions[0].question
+ansBtn.textContent = questions[0].answer1
+console.log(questions[0].question)
+console.log(questions[0].answer)
