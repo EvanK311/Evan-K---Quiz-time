@@ -19,32 +19,6 @@ var answerButton = document.getElementById('answerChoices');
 var randoQuestions
 var currentQuestionIndex
 
-questionContentBox.classList.add('hide')
-ansBtn.classList.add('hide');
-ansBtn2.classList.add('hide');
-ansBtn3.classList.add('hide');
-ansBtn4.classList.add('hide');
-
-startBtn.addEventListener('click', startGame); {
-
-    function startGame() {
-        console.log("started");
-        startBtn.classList.add('hide');
-        questionContentBox.classList.remove('hide');
-        ansBtn.classList.remove('hide');
-        ansBtn2.classList.remove('hide');
-        ansBtn3.classList.remove('hide');
-        ansBtn4.classList.remove('hide');
-        nextQuestion();
-    }
-}
-
-function nextQuestion() {
-
-    function showQuestion(question) {
-        currentQuestion.innerText = question.question;
-    }
-}
 var questions = [
     {
         question: 'Which type is fire weak to',
@@ -65,8 +39,34 @@ var questions = [
     }
 ];
 
+questionMaker.style.display = "none"
+questionContentBox.style.display = "none"
 
-questionMaker.textContent = questions[0].question
-ansBtn.textContent = questions[0].answer1
+document.getElementById("startBtn").addEventListener('click', function(startgame) {    
+        console.log("started");
+        startBtn.style.display = "none";
+    questionContentBox.style.display = "block";
+    questionMaker.style.display = "block"
+    questionMaker.textContent = questions[0].question
+    ansBtn.textContent = questions[0].answer1
+    ansBtn2.textContent = questions[0].answer2
+    ansBtn3.textContent = questions[0].answer3
+    ansBtn4.textContent = questions[0].answer4
+
+        // nextQuestion();
+    }
+)
+
+// function nextQuestion() {
+
+//     function showQuestion(question) {
+//         currentQuestion.innerText = question.question;
+//     }
+// }
+
+
+
+// questionMaker.textContent = questions[0].question
+// ansBtn.textContent = questions[0].answer1
 console.log(questions[0].question)
 console.log(questions[0].answer)
