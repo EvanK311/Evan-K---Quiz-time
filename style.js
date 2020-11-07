@@ -35,9 +35,9 @@ document.querySelector("#startGameBtn").addEventListener("click",function() {
 function quizTimer() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      timeRemaining.textContent = "You have " + secondsLeft + " seconds remaining";
+      timeRemaining.textContent = secondsLeft + " seconds";
       if(secondsLeft <= 0) {
-        endTheGame(timerInterval)
+        endGame(timerInterval)
       }
     }, 1000);
 }
@@ -64,8 +64,40 @@ answers.addEventListener("click", function (event) {
 
     if (userAns === correctAns) {
       quizScore = quizScore + 20;
+    } else {
+      secondsLeft = secondsLeft - 10;
     }
+    if (questionNum == 3) {
+      endGame(0);
+      return;
+    }
+    questionSelector()
   }
+})
+
+function endGame(endTime) {
+  clearInterval(endTime);
+  questions.style.display = "none";
+  answers.style.display = "none";
+  timeRemaining.style.display = "none";
+  gameOver.style.display = "block"
+}
+
+function highScore() {
+  for (let i = 0; i < listNum; i++){
+
+    var list = document.createElement("li")
+    list.setAttribute("data-index", i);
+    list.innerHTML = quizScore + userName.nodeValue;
+    highScoreList.appendChild(list)
+  }
+}
+
+var hiScoreBtn = document.querySelector("#hiScoreBtn")
+hiScoreBtn.addEventListener("click", function (event) {
+  localStorage.setItem("Quiz score", quizScore);
+  localStorage.setItem("user name", userName.value);
+  renderHighScore();
 })
 
 pokeQuestions = [  

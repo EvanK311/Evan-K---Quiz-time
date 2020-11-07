@@ -12,16 +12,56 @@
     padding: 30px;
 }
 
-/* .question {
-   text-align: center;
-   vertical-align: center;
-
-}
-
-h1 {
+.timeRemaining {
+    background: yellow;
+    display: none;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
     text-align: center;
 }
 
-#quiztions {
-    padding: 30x;
-} */
+.questions {
+    color: black;
+    background: rgb(250, 178, 112);
+    display: none;
+    text-align: center;
+    padding: 1vw;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+}
+
+.answers {
+    background: rgb(57, 56, 70);
+    display: none;
+    padding: 3vw;
+    color: white;
+    width: auto;
+    text-align: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    border-radius: 10px;
+}
+
+.answer-buttons {
+    padding: .5vw;
+}
+
+.endGame {
+    background: orangered;
+    display: none;
+    padding: 3vw;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+
+}
+
+.submitArea {
+    display: none;
+}
