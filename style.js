@@ -26,7 +26,7 @@ var userName = document.querySelector("#userName");
 document.querySelector("#startGameBtn").addEventListener("click",function() {
     startGame.style.display = "none";
     questions.style.display = "block";
-    answersBlock.style.display = "block";
+    answers.style.display = "block";
     timeRemaining.style.display = "block";
     quizTimer();
     questionSelector();
@@ -43,10 +43,10 @@ function quizTimer() {
 }
   
 function questionSelector() {
-  questionText.textContent = pokeQuestions[questionNum].questionBlock;
+  questionText.textContent = pokeQuestions[questionNum].question;
   answerOneBtn.textContent = pokeQuestions[questionNum].answer1;
-  answerTwoBtn.textConent = pokeQuestions[questionNum].answer2;
-  answerThreeBtn.textConent = pokeQuestions[questionNum].answer3;
+  answerTwoBtn.textContent = pokeQuestions[questionNum].answer2;
+  answerThreeBtn.textContent = pokeQuestions[questionNum].answer3;
   answerFourBtn.textContent = pokeQuestions[questionNum].answer4;
   }
 
@@ -97,7 +97,7 @@ var hiScoreBtn = document.querySelector("#hiScoreBtn")
 hiScoreBtn.addEventListener("click", function (event) {
   localStorage.setItem("Quiz score", quizScore);
   localStorage.setItem("user name", userName.value);
-  renderHighScore();
+  highScore();
 })
 
 pokeQuestions = [  
