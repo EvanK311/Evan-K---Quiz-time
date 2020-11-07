@@ -40,4 +40,37 @@ function quizTimer() {
         endTheGame(timerInterval)
       }
     }, 1000);
+}
+  
+function questionSelector() {
+  questionText.textContent = pokeQuestions[questionNum].questionBlock;
+  answerBtnOne.textContent = pokeQuestions[questionNum].ans1
   }
+
+pokeQuestions = [  
+{
+            question: 'Which type is fire weak to',
+            answer1: 'Rock',
+            answer2: 'Grass',
+            answer3: 'Flying',
+            answer4: 'Ice',
+            correct: 'Rock'
+        },
+    
+        {
+            question: 'Pikachu evolves using what method?',
+            answer1: 'Level up',
+            answer2: 'Trading',
+            answer3: 'Thunder Stone',
+            answer4: 'Friendship',
+            correct: 'Thunder Stone',
+        },
+        {
+            question: 'Which of these does not belong',
+            answer1: 'Zapdos',
+            answer2: 'Articuno',
+            answer3: 'Lugia',
+            answer4: 'Moltres',
+            correct: 'Lugia',
+        }
+  ]
