@@ -13,9 +13,9 @@ var highScoreList = document.querySelector("#high-score-list");
 
 
 
-var startGameBlock = document.querySelector(".startGame") // start game block
-var questionBlock = document.querySelector(".questions"); // questions block
-var answersBlock = document.querySelector(".answers"); //answers block
+var startGame = document.querySelector(".startGame") // start game block
+var questions = document.querySelector(".questions"); // questions block
+var answers = document.querySelector(".answers"); //answers block
 var submitBtn = document.querySelector(".submitArea"); //submit button
 var timeRemaining = document.querySelector(".timeRemaining"); //time remaining
 var gameOver = document.querySelector(".endGame"); //game over page
@@ -24,8 +24,8 @@ var userName = document.querySelector("#userName");
 
 //On clicking start game, time remaining, question block, answer buttons, and submit button become visible
 document.querySelector("#startGameBtn").addEventListener("click",function() {
-    startGameBlock.style.display = "none";
-    questionBlock.style.display = "block";
+    startGame.style.display = "none";
+    questions.style.display = "block";
     answersBlock.style.display = "block";
     timeRemaining.style.display = "block";
     quizTimer();
@@ -44,8 +44,29 @@ function quizTimer() {
   
 function questionSelector() {
   questionText.textContent = pokeQuestions[questionNum].questionBlock;
-  answerBtnOne.textContent = pokeQuestions[questionNum].ans1
+  answerOneBtn.textContent = pokeQuestions[questionNum].answer1;
+  answerTwoBtn.textConent = pokeQuestions[questionNum].answer2;
+  answerThreeBtn.textConent = pokeQuestions[questionNum].answer3;
+  answerFourBtn.textContent = pokeQuestions[questionNum].answer4;
   }
+
+var ans1Text
+var ans2Text
+var ans3Text
+var ans4Text
+
+answers.addEventListener("click", function (event) {
+  
+  if (event.target.matches("button")) {
+    var userAns = (event.target.innerHTML)
+    var correctAns = pokeQuestions[questionNum].correct;
+    questionNum++;
+
+    if (userAns === correctAns) {
+      quizScore = quizScore + 20;
+    }
+  }
+})
 
 pokeQuestions = [  
 {
