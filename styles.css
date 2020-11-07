@@ -1,3 +1,5 @@
+
+
 .container {
     margin-top: 100px;
     margin-bottom: 100px;    
@@ -7,13 +9,24 @@
     
 }
 
+.startGame {
+    background: rgb(57, 56, 70);
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+    text-align: center;
+    padding: .5vw;
+    color: white;
+}
+
 .card {
     margin-top: 100px;
     padding: 30px;
 }
 
 .timeRemaining {
-    background: yellow;
+    background: gray;
     display: none;
     margin-left: 25vw;
     margin-right: 25vw;
@@ -23,8 +36,8 @@
 }
 
 .questions {
-    color: black;
-    background: rgb(250, 178, 112);
+    color: white;
+    background: Gray;
     display: none;
     text-align: center;
     padding: 1vw;
@@ -51,7 +64,7 @@
 }
 
 .endGame {
-    background: orangered;
+    background: olivedrab;
     display: none;
     padding: 3vw;
     margin-left: 25vw;

@@ -1,7 +1,7 @@
-var questionsRemaining = 5;
+var questionsRemaining = 6;
 var correctAnswer= "";
 var quizScore = 0;
-var secondsLeft = 30;
+var secondsLeft = 40;
 var questionNum = 0;
 var listNum = 1;
 var questionText = document.querySelector(".questionArea");
@@ -67,7 +67,7 @@ answers.addEventListener("click", function (event) {
     } else {
       secondsLeft = secondsLeft - 10;
     }
-    if (questionNum == 3) {
+    if (questionNum == 6) {
       endGame(0);
       return;
     }
@@ -102,7 +102,7 @@ hiScoreBtn.addEventListener("click", function (event) {
 
 pokeQuestions = [  
 {
-            question: 'Which type is fire weak to',
+            question: 'What type is fire weak to',
             answer1: 'Rock',
             answer2: 'Grass',
             answer3: 'Flying',
@@ -125,5 +125,29 @@ pokeQuestions = [
             answer3: 'Lugia',
             answer4: 'Moltres',
             correct: 'Lugia',
+  },
+  {
+            question: "Finish the quote. 'Gary was here, Ash is a ...'",
+            answer1: 'Loser',
+            answer2: 'Champ',
+            answer3: 'Pal',
+            answer4: 'Hardworker',
+            correct: 'Loser',
+  },
+  {
+            question: 'Which of these does not belong',
+            answer1: 'Hitmonchan',
+            answer2: 'Tyrogue',
+            answer3: 'Hitmonlee',
+            answer4: 'Primeape',
+            correct: 'Tyrogue',
+  },
+  {
+            question: 'Dark is strong against what type?',
+            answer1: 'Ghost',
+            answer2: 'Fairy',
+            answer3: 'Grass',
+            answer4: 'Steel',
+            correct: 'Ghost',
         }
   ]
